@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">pickin\'</string>
+    <string name="textview">TextView</string>
+    <string name="posterpath">posterPath</string>
+    <string name="dragonball">dragonball</string>
+    <string name="overview">Overview</string>
+</resources>
