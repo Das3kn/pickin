@@ -17,7 +17,7 @@ class MainActivity : AppCompatActivity() ,  OnItemClickListener{
     //private val baseURL: String = "https://api.themoviedb.org/3/"
 
     //private var ResponseModel : ArrayList<ResponseModel>? = null
-    //private lateinit var binding : ActivityMainBinding
+    //private lateinit var binding : ActivityMinBinding
     private var listView: ListView? = null
     private var movieAdapter: CardCellAdapter? = null
     private var arrayList: ArrayList<ResponseModel>? = null
