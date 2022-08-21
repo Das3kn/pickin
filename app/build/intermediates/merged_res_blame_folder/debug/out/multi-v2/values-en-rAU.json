@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "com.bugrakaragozoglu.pickin.app-mergeDebugResources-32:/values-en-rAU/values-en-rAU.xml",
+            "outputFile": "com.bugrakaragozoglu.pickin.app-mergeDebugResources-29:/values-en-rAU/values-en-rAU.xml",
             "map": [
                 {
                     "source": "C:\\Users\\filiz\\.gradle\\caches\\transforms-3\\25fdb4b5729408368178052da17f5e34\\transformed\\appcompat-1.5.0\\res\\values-en-rAU\\values-en-rAU.xml",

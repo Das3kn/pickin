@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "com.bugrakaragozoglu.pickin.app-mergeDebugResources-32:/values-land/values-land.xml",
+            "outputFile": "com.bugrakaragozoglu.pickin.app-mergeDebugResources-29:/values-land/values-land.xml",
             "map": [
                 {
                     "source": "C:\\Users\\filiz\\.gradle\\caches\\transforms-3\\9d6778b007a14e0c6659deb3da7018f2\\transformed\\material-1.6.1\\res\\values-land\\values-land.xml",

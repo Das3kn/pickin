@@ -26,6 +26,7 @@ id imageSlider
 id movieOverview
 id moviePosterPath
 id movieTitle
+id relativeLayout
 layout activity_main
 layout activity_splash_screen
 layout card_cell
@@ -33,10 +34,16 @@ mipmap ic_launcher
 mipmap ic_launcher_round
 raw splashscreen
 string app_name
+string blaclight_overview
 string dragonball
+string movie_overview
+string movie_title
 string overview
+string overview_overview
+string overview_title
 string posterpath
 string textview
+string title
 style Theme.Pickin
 xml backup_rules
 xml data_extraction_rules

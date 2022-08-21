@@ -1,58 +1,62 @@
 <?xml version="1.0" encoding="utf-8"?>
-<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     app:cardElevation="6dp"
-    app:cardUseCompatPadding="true"
-    app:cardPreventCornerOverlap="true">
+    app:cardPreventCornerOverlap="true"
+    app:cardUseCompatPadding="true">
 
     <RelativeLayout
-        android:layout_width="379dp"
-        android:layout_height="123dp"
-        android:paddingBottom="4dp">
+        android:id="@+id/relativeLayout"
+        android:layout_width="409dp"
+        android:layout_height="119dp"
+        android:paddingBottom="4dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
         <ImageView
             android:id="@+id/moviePosterPath"
-            android:layout_width="92dp"
-            android:layout_height="118dp"
+            android:layout_width="79dp"
+            android:layout_height="103dp"
+            android:layout_alignParentStart="true"
             android:layout_alignParentTop="true"
             android:layout_alignParentBottom="true"
-            android:layout_marginLeft="5dp"
-            android:layout_marginTop="1dp"
+            android:layout_marginStart="13dp"
+            android:layout_marginTop="12dp"
             android:layout_marginBottom="0dp"
             android:src="@drawable/dragonballposterpath" />
 
         <TextView
             android:id="@+id/movieTitle"
-            android:layout_width="271dp"
-            android:layout_height="35dp"
-            android:layout_alignParentStart="true"
+            android:layout_width="wrap_content"
+            android:layout_height="37dp"
+            android:layout_alignParentTop="true"
             android:layout_alignParentEnd="true"
             android:layout_alignParentBottom="true"
-            android:layout_marginStart="101dp"
-            android:layout_marginEnd="7dp"
-            android:layout_marginBottom="88dp"
-            android:text="blaclight title"
+            android:layout_marginStart="3dp"
+            android:layout_marginTop="2dp"
+            android:layout_marginEnd="-3dp"
+            android:layout_marginBottom="93dp"
+            android:layout_toEndOf="@+id/moviePosterPath"
+            android:text="title"
             android:textStyle="bold" />
 
         <TextView
             android:id="@+id/movieOverview"
-            android:layout_width="274dp"
+            android:layout_width="310dp"
             android:layout_height="84dp"
-            android:layout_alignParentTop="true"
             android:layout_alignParentEnd="true"
             android:layout_alignParentBottom="true"
-            android:layout_marginStart="8dp"
-            android:layout_marginLeft="90dp"
-            android:layout_marginTop="35dp"
-            android:layout_marginEnd="0dp"
-            android:layout_marginBottom="4dp"
-            android:layout_toEndOf="@+id/moviePosterPath"
-            android:text="Blaclight overview" />
+            android:layout_marginEnd="4dp"
+            android:layout_marginBottom="1dp"
+            android:text="overview" />
 
 
     </RelativeLayout>
 
 
-</com.google.android.material.card.MaterialCardView>
+</androidx.constraintlayout.widget.ConstraintLayout>

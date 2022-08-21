@@ -26,7 +26,7 @@ class MainActivity : AppCompatActivity() ,  OnItemClickListener{
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         supportActionBar?.hide()
-   //invalidate catch and restart
+
         val imageList = ArrayList<SlideModel>()
         imageList.add(
             SlideModel(
@@ -90,15 +90,61 @@ class MainActivity : AppCompatActivity() ,  OnItemClickListener{
     }
 
     private fun setDataItem(): ArrayList<ResponseModel> {
-        val listItem: ArrayList<ResponseModel> = ArrayList()
+        val listItem:ArrayList<ResponseModel> = ArrayList()
         listItem.add(ResponseModel(
             "Dragonball",
-         "SREDTFYGUHJIKOL",
+         "Dragonball Overview",
         R.drawable.dragonballposterpath
 
         ))
+        listItem.add(ResponseModel(
+            "Chickenhare",
+            "Chickenhare Overview",
+            R.drawable.chickenhareposterpath
 
+        ))
+        listItem.add(ResponseModel(
+            "Fireheart",
+            "Fireheart Overview",
+            R.drawable.fireheartposterpath
 
+        ))
+        listItem.add(ResponseModel(
+            "Memory",
+            "Memory Overview",
+            R.drawable.memoryposterpath
+
+        ))
+        listItem.add(ResponseModel(
+            "Minions",
+            "Minions Overview",
+            R.drawable.minionsposterpath
+
+        ))
+        listItem.add(ResponseModel(
+            "Sharkbait",
+            "Sharkbait Overview",
+            R.drawable.sharkbaitposterpath
+
+        ))
+        listItem.add(ResponseModel(
+            "Spiderman",
+            "Spiderman Overview",
+            R.drawable.spidermanposterpath
+
+        ))
+        listItem.add(ResponseModel(
+            "Superpets",
+            "Superpets Overview",
+            R.drawable.superpetsposterpath
+
+        ))
+        listItem.add(ResponseModel(
+            "The Northman",
+            "The Northman Overview",
+            R.drawable.thenorthmanposterpath
+
+        ))
 
         return listItem
     }

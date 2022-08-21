@@ -1,0 +1,676 @@
+Index: app/build.gradle
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/build.gradle b/app/build.gradle
+new file mode 100644
+--- /dev/null	(revision 0b51aa72c37419cccc7844761f6c0fe30f74a642)
++++ b/app/build.gradle	(revision 0b51aa72c37419cccc7844761f6c0fe30f74a642)
+@@ -0,0 +1,64 @@
++
++plugins {
++    id 'com.android.application'
++    id 'org.jetbrains.kotlin.android'
++}
++apply plugin: 'kotlin-android'
++apply plugin: 'kotlin-android-extensions'
++android {
++    compileSdk 32
++
++    defaultConfig {
++        applicationId "com.bugrakaragozoglu.pickin"
++        minSdk 24
++        targetSdk 32
++        versionCode 1
++        versionName "1.0"
++
++        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
++    }
++
++
++    buildTypes {
++        release {
++            minifyEnabled false
++            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
++        }
++    }
++    compileOptions {
++        sourceCompatibility JavaVersion.VERSION_1_8
++        targetCompatibility JavaVersion.VERSION_1_8
++    }
++    kotlinOptions {
++        jvmTarget = '1.8'
++    }
++}
++def lottieVersion = "3.4.0"
++def retrofitVersion = '2.3.0'
++def rxJavaVersion = '2.1.1'
++dependencies {
++
++    implementation 'androidx.core:core-ktx:1.8.0'
++    implementation 'androidx.appcompat:appcompat:1.5.0'
++    implementation 'com.google.android.material:material:1.6.1'
++    implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
++    implementation 'com.github.denzcoskun:ImageSlideshow:0.1.0'
++    implementation 'com.google.android.gms:play-services-ads-lite:21.1.0'
++    testImplementation 'junit:junit:4.13.2'
++    androidTestImplementation 'androidx.test.ext:junit:1.1.3'
++    androidTestImplementation 'androidx.test.espresso:espresso-core:3.4.0'
++    implementation "com.airbnb.android:lottie:$lottieVersion"
++
++    implementation "com.squareup.retrofit2:retrofit:$retrofitVersion"
++    implementation "com.squareup.retrofit2:converter-gson:$retrofitVersion"
++    implementation "com.squareup.retrofit2:adapter-rxjava2:$retrofitVersion"
++
++    implementation "io.reactivex.rxjava2:rxjava:$rxJavaVersion"
++    implementation "io.reactivex.rxjava2:rxandroid:$rxJavaVersion"
++    implementation 'androidx.recyclerview:recyclerview:1.2.1'
++
++    implementation("androidx.cardview:cardview:1.0.0")
++
++
++
++}
+\ No newline at end of file
+Index: app/src/main/AndroidManifest.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/AndroidManifest.xml b/app/src/main/AndroidManifest.xml
+new file mode 100644
+--- /dev/null	(revision 0b51aa72c37419cccc7844761f6c0fe30f74a642)
++++ b/app/src/main/AndroidManifest.xml	(revision 0b51aa72c37419cccc7844761f6c0fe30f74a642)
+@@ -0,0 +1,33 @@
++<?xml version="1.0" encoding="utf-8"?>
++
++<manifest xmlns:android="http://schemas.android.com/apk/res/android"
++    xmlns:tools="http://schemas.android.com/tools"
++    package="com.bugrakaragozoglu.pickin">
++    <uses-permission android:name="android.permission.INTERNET" />
++    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
++    <application
++        android:allowBackup="true"
++        android:dataExtractionRules="@xml/data_extraction_rules"
++        android:fullBackupContent="@xml/backup_rules"
++        android:icon="@mipmap/ic_launcher"
++        android:label="@string/app_name"
++        android:roundIcon="@mipmap/ic_launcher_round"
++        android:supportsRtl="true"
++        android:theme="@style/Theme.Pickin"
++        tools:targetApi="31">
++        <activity
++            android:name=".MainActivity"
++            android:exported="false" />
++
++        <activity
++            android:name=".SplashScreen"
++            android:exported="true">
++            <intent-filter>
++                <action android:name="android.intent.action.MAIN" />
++
++                <category android:name="android.intent.category.LAUNCHER" />
++            </intent-filter>
++        </activity>
++    </application>
++
++</manifest>
+\ No newline at end of file
+Index: app/src/main/java/com/bugrakaragozoglu/pickin/MainActivity.kt
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/java/com/bugrakaragozoglu/pickin/MainActivity.kt b/app/src/main/java/com/bugrakaragozoglu/pickin/MainActivity.kt
+new file mode 100644
+--- /dev/null	(revision 0b51aa72c37419cccc7844761f6c0fe30f74a642)
++++ b/app/src/main/java/com/bugrakaragozoglu/pickin/MainActivity.kt	(revision 0b51aa72c37419cccc7844761f6c0fe30f74a642)
+@@ -0,0 +1,123 @@
++package com.bugrakaragozoglu.pickin
++
++import android.os.Bundle
++import android.view.View
++import android.widget.AdapterView
++import android.widget.AdapterView.OnItemClickListener
++import android.widget.ListView
++import android.widget.Toast
++import androidx.appcompat.app.AppCompatActivity
++import com.bugrakaragozoglu.pickin.adapter.CardCellAdapter
++import com.bugrakaragozoglu.pickin.model.ResponseModel
++import com.denzcoskun.imageslider.ImageSlider
++import com.denzcoskun.imageslider.constants.ScaleTypes
++import com.denzcoskun.imageslider.models.SlideModel
++
++class MainActivity : AppCompatActivity() ,  OnItemClickListener{
++    //private val baseURL: String = "https://api.themoviedb.org/3/"
++
++    //private var ResponseModel : ArrayList<ResponseModel>? = null
++    //private lateinit var binding : ActivityMainBinding
++    private var listView: ListView? = null
++    private var movieAdapter: CardCellAdapter? = null
++    private var arrayList: ArrayList<ResponseModel>? = null
++
++    override fun onCreate(savedInstanceState: Bundle?) {
++        super.onCreate(savedInstanceState)
++        setContentView(R.layout.activity_main)
++        supportActionBar?.hide()
++   //invalidate catch and restart
++        val imageList = ArrayList<SlideModel>()
++        imageList.add(
++            SlideModel(
++                "https://image.tmdb.org/t/p/original//nW5fUbldp1DYf2uQ3zJTUdachOu.jpg",
++                "Lightyear"
++            )
++        )
++        imageList.add(
++            SlideModel(
++                "https://image.tmdb.org/t/p/original//wcKFYIiVDvRURrzglV9kGu7fpfY.jpg",
++                "Doctor Strange in the Multiverse of Madness"
++            )
++        )
++        imageList.add(
++            SlideModel(
++                "https://image.tmdb.org/t/p/original//AfvIjhDu9p64jKcmohS4hsPG95Q.jpg",
++                "The Black Phone"
++            )
++        )
++        imageList.add(
++            SlideModel(
++                "https://image.tmdb.org/t/p/original//odJ4hx6g6vBt4lBWKFD1tI8WS4x.jpg",
++                "Top Gun: Maverick"
++            )
++        )
++        imageList.add(
++            SlideModel(
++                "https://image.tmdb.org/t/p/original//393mh1AJ0GYWVD7Hsq5KkFaTAoT.jpg",
++                "Jurassic World Dominion"
++            )
++        )
++        imageList.add(
++            SlideModel(
++                "https://image.tmdb.org/t/p/original//qTkJ6kbTeSjqfHCFCmWnfWZJOtm.jpg",
++                "Minions: The Rise of Gru"
++            )
++        )
++
++        val imageSlider = findViewById<ImageSlider>(R.id.imageSlider)
++        imageSlider.setImageList(imageList, ScaleTypes.FIT)
++
++        listView = findViewById(R.id.card_view_list_view)
++        arrayList = ArrayList()
++        arrayList = setDataItem()
++        movieAdapter = CardCellAdapter(applicationContext, arrayList!!)
++        listView?.adapter = movieAdapter
++       // listView?.setOnItemClickListener { adapterView, view, i, l ->
++
++       // }
++            listView?.onItemClickListener=this
++
++
++        //api key : 808f9e99f5c44c0619283e52ca6b455c
++        //val mainActivity = this
++        // binding.recyclerview.apply {
++        //   layoutManager = GridLayoutManager(applicationContext,3)
++        //  adapter = CardCellAdapter(responseListForExample)
++        //}
++
++
++    }
++
++    private fun setDataItem(): ArrayList<ResponseModel> {
++        val listItem: ArrayList<ResponseModel> = ArrayList()
++        listItem.add(ResponseModel(
++            "Dragonball",
++         "SREDTFYGUHJIKOL",
++        R.drawable.dragonballposterpath
++
++        ))
++
++
++
++        return listItem
++    }
++
++    override fun onItemClick(parent: AdapterView<*>?, view: View?, position: Int, id: Long) {
++        val items: ResponseModel = arrayList?.get(position)!!
++        Toast.makeText(applicationContext, items.movieTitle, Toast.LENGTH_LONG).show()
++    }
++
++    // override fun onItemClick(parent: AdapterView<*>, view: View, position: Int, id: Long) {
++     //   val items: ResponseModel = arrayList?.get(position)!!
++       // Toast.makeText(applicationContext, items.movieTitle, Toast.LENGTH_LONG).show()
++    //}
++
++
++}
++
++
++
++
++
++
+Index: app/src/main/java/com/bugrakaragozoglu/pickin/SplashScreen.kt
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/java/com/bugrakaragozoglu/pickin/SplashScreen.kt b/app/src/main/java/com/bugrakaragozoglu/pickin/SplashScreen.kt
+new file mode 100644
+--- /dev/null	(revision 0b51aa72c37419cccc7844761f6c0fe30f74a642)
++++ b/app/src/main/java/com/bugrakaragozoglu/pickin/SplashScreen.kt	(revision 0b51aa72c37419cccc7844761f6c0fe30f74a642)
+@@ -0,0 +1,26 @@
++package com.bugrakaragozoglu.pickin
++
++import android.content.Intent
++import androidx.appcompat.app.AppCompatActivity
++import android.os.Bundle
++import android.os.CountDownTimer
++
++
++
++
++class SplashScreen : AppCompatActivity() {
++    override fun onCreate(savedInstanceState: Bundle?) {
++        super.onCreate(savedInstanceState)
++        setContentView(R.layout.activity_splash_screen)
++        supportActionBar?.hide()
++        val timer = object: CountDownTimer(3000, 1000) {
++            override fun onTick(millisUntilFinished: Long) {}
++
++            override fun onFinish() {
++                val intent= Intent(this@SplashScreen,MainActivity::class.java)
++                startActivity(intent)
++            }
++        }
++        timer.start()
++    }
++}
+\ No newline at end of file
+Index: app/src/main/java/com/bugrakaragozoglu/pickin/adapter/CardCellAdapter.kt
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/java/com/bugrakaragozoglu/pickin/adapter/CardCellAdapter.kt b/app/src/main/java/com/bugrakaragozoglu/pickin/adapter/CardCellAdapter.kt
+new file mode 100644
+--- /dev/null	(revision 0b51aa72c37419cccc7844761f6c0fe30f74a642)
++++ b/app/src/main/java/com/bugrakaragozoglu/pickin/adapter/CardCellAdapter.kt	(revision 0b51aa72c37419cccc7844761f6c0fe30f74a642)
+@@ -0,0 +1,52 @@
++package com.bugrakaragozoglu.pickin.adapter
++
++
++import android.annotation.SuppressLint
++import android.content.Context
++import android.view.View
++import android.view.ViewGroup
++import android.widget.BaseAdapter
++import android.widget.ImageView
++import android.widget.TextView
++import com.bugrakaragozoglu.pickin.R
++import com.bugrakaragozoglu.pickin.model.ResponseModel
++
++class CardCellAdapter(var context: Context, var arrayList: ArrayList<ResponseModel>):BaseAdapter() {
++     override fun getCount(): Int {
++         return arrayList.size
++     }
++
++     override fun getItem(position: Int): Any {
++         return arrayList.get(position)
++     }
++
++     override fun getItemId(position: Int): Long {
++         return position.toLong()
++     }
++
++     @SuppressLint("ViewHolder")
++     override fun getView(position: Int, convertView: View?, parent: ViewGroup?): View {
++         val view:View = View.inflate(context , R.layout.card_cell,null)
++         val moviePosterPath: ImageView = view.findViewById(R.id.moviePosterPath)
++         val movieTitle: TextView = view.findViewById(R.id.movieTitle)
++         val movieOverView: TextView = view.findViewById(R.id.movieOverview)
++
++         val items:ResponseModel = arrayList.get(position)
++
++         moviePosterPath.setImageResource(items.moviePosterPath)
++         movieTitle.text = items.movieTitle
++         movieOverView.text = items.movieOverview
++
++
++         return view
++     }
++
++
++ }
++
++
++
++
++
++
++
+Index: app/src/main/java/com/bugrakaragozoglu/pickin/model/ExampleModels.kt
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/java/com/bugrakaragozoglu/pickin/model/ExampleModels.kt b/app/src/main/java/com/bugrakaragozoglu/pickin/model/ExampleModels.kt
+new file mode 100644
+--- /dev/null	(revision 0b51aa72c37419cccc7844761f6c0fe30f74a642)
++++ b/app/src/main/java/com/bugrakaragozoglu/pickin/model/ExampleModels.kt	(revision 0b51aa72c37419cccc7844761f6c0fe30f74a642)
+@@ -0,0 +1,4 @@
++package com.bugrakaragozoglu.pickin.model
++
++class ExampleModels {
++}
+\ No newline at end of file
+Index: app/src/main/java/com/bugrakaragozoglu/pickin/model/ResponseModel.kt
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/java/com/bugrakaragozoglu/pickin/model/ResponseModel.kt b/app/src/main/java/com/bugrakaragozoglu/pickin/model/ResponseModel.kt
+new file mode 100644
+--- /dev/null	(revision 0b51aa72c37419cccc7844761f6c0fe30f74a642)
++++ b/app/src/main/java/com/bugrakaragozoglu/pickin/model/ResponseModel.kt	(revision 0b51aa72c37419cccc7844761f6c0fe30f74a642)
+@@ -0,0 +1,19 @@
++package com.bugrakaragozoglu.pickin.model
++
++import androidx.appcompat.widget.DialogTitle
++import com.google.gson.annotations.SerializedName
++
++class ResponseModel (
++       /* @SerializedName("backdrop_path")
++        val backdrop_path: Any,
++        @SerializedName("title")
++        val title: String,
++        @SerializedName("overview")
++        val overview: String,
++        @SerializedName("poster_path")
++        val poster_path : String
++        )*/
++        val movieTitle: String,
++        val movieOverview : String,
++        val moviePosterPath : Int)
++        //var backdrop_path : Any)
+Index: app/src/main/java/com/bugrakaragozoglu/pickin/service/TheMovieAPI.kt
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/java/com/bugrakaragozoglu/pickin/service/TheMovieAPI.kt b/app/src/main/java/com/bugrakaragozoglu/pickin/service/TheMovieAPI.kt
+new file mode 100644
+--- /dev/null	(revision 0b51aa72c37419cccc7844761f6c0fe30f74a642)
++++ b/app/src/main/java/com/bugrakaragozoglu/pickin/service/TheMovieAPI.kt	(revision 0b51aa72c37419cccc7844761f6c0fe30f74a642)
+@@ -0,0 +1,14 @@
++package com.bugrakaragozoglu.pickin.service
++
++import com.bugrakaragozoglu.pickin.model.ResponseModel
++import io.reactivex.Observable
++import retrofit2.http.GET
++
++interface TheMovieAPI {
++        @GET("movie/now_playing?api_key=808f9e99f5c44c0619283e52ca6b455c")
++        fun getNowPlaying(): Observable<List<ResponseModel>>
++        @GET("movie/upcoming?api_key=808f9e99f5c44c0619283e52ca6b455c")
++        fun getUpComing(): Observable<List<ResponseModel>>
++}
++//https://api.themoviedb.org/3/movie/now_playing?api_key=808f9e99f5c44c0619283e52ca6b455c
++//https://api.themoviedb.org/3/movie/upcoming?api_key=808f9e99f5c44c0619283e52ca6b455c
+\ No newline at end of file
+Index: app/src/main/res/drawable-v24/ic_launcher_foreground.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/res/drawable-v24/ic_launcher_foreground.xml b/app/src/main/res/drawable-v24/ic_launcher_foreground.xml
+new file mode 100644
+--- /dev/null	(revision 0b51aa72c37419cccc7844761f6c0fe30f74a642)
++++ b/app/src/main/res/drawable-v24/ic_launcher_foreground.xml	(revision 0b51aa72c37419cccc7844761f6c0fe30f74a642)
+@@ -0,0 +1,30 @@
++<vector xmlns:android="http://schemas.android.com/apk/res/android"
++    xmlns:aapt="http://schemas.android.com/aapt"
++    android:width="108dp"
++    android:height="108dp"
++    android:viewportWidth="108"
++    android:viewportHeight="108">
++    <path android:pathData="M31,63.928c0,0 6.4,-11 12.1,-13.1c7.2,-2.6 26,-1.4 26,-1.4l38.1,38.1L107,108.928l-32,-1L31,63.928z">
++        <aapt:attr name="android:fillColor">
++            <gradient
++                android:endX="85.84757"
++                android:endY="92.4963"
++                android:startX="42.9492"
++                android:startY="49.59793"
++                android:type="linear">
++                <item
++                    android:color="#44000000"
++                    android:offset="0.0" />
++                <item
++                    android:color="#00000000"
++                    android:offset="1.0" />
++            </gradient>
++        </aapt:attr>
++    </path>
++    <path
++        android:fillColor="#FFFFFF"
++        android:fillType="nonZero"
++        android:pathData="M65.3,45.828l3.8,-6.6c0.2,-0.4 0.1,-0.9 -0.3,-1.1c-0.4,-0.2 -0.9,-0.1 -1.1,0.3l-3.9,6.7c-6.3,-2.8 -13.4,-2.8 -19.7,0l-3.9,-6.7c-0.2,-0.4 -0.7,-0.5 -1.1,-0.3C38.8,38.328 38.7,38.828 38.9,39.228l3.8,6.6C36.2,49.428 31.7,56.028 31,63.928h46C76.3,56.028 71.8,49.428 65.3,45.828zM43.4,57.328c-0.8,0 -1.5,-0.5 -1.8,-1.2c-0.3,-0.7 -0.1,-1.5 0.4,-2.1c0.5,-0.5 1.4,-0.7 2.1,-0.4c0.7,0.3 1.2,1 1.2,1.8C45.3,56.528 44.5,57.328 43.4,57.328L43.4,57.328zM64.6,57.328c-0.8,0 -1.5,-0.5 -1.8,-1.2s-0.1,-1.5 0.4,-2.1c0.5,-0.5 1.4,-0.7 2.1,-0.4c0.7,0.3 1.2,1 1.2,1.8C66.5,56.528 65.6,57.328 64.6,57.328L64.6,57.328z"
++        android:strokeWidth="1"
++        android:strokeColor="#00000000" />
++</vector>
+\ No newline at end of file
+Index: app/src/main/res/layout/activity_main.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/res/layout/activity_main.xml b/app/src/main/res/layout/activity_main.xml
+new file mode 100644
+--- /dev/null	(revision 0b51aa72c37419cccc7844761f6c0fe30f74a642)
++++ b/app/src/main/res/layout/activity_main.xml	(revision 0b51aa72c37419cccc7844761f6c0fe30f74a642)
+@@ -0,0 +1,37 @@
++<?xml version="1.0" encoding="utf-8"?>
++<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
++    xmlns:app="http://schemas.android.com/apk/res-auto"
++    xmlns:tools="http://schemas.android.com/tools"
++    android:layout_width="match_parent"
++    android:layout_height="200dp"
++    tools:context=".MainActivity">
++
++    <com.denzcoskun.imageslider.ImageSlider
++        android:id="@+id/imageSlider"
++        android:layout_width="match_parent"
++        android:layout_height="match_parent"
++        app:iss_auto_cycle="true"
++        app:iss_delay="1000"
++        app:iss_period="1000"
++        app:iss_title_background="@color/semitransparent"
++        app:layout_constraintEnd_toEndOf="parent"
++        app:layout_constraintHorizontal_bias="0.0"
++        app:layout_constraintStart_toStartOf="parent"
++        app:layout_constraintTop_toTopOf="parent">
++
++    </com.denzcoskun.imageslider.ImageSlider>
++
++    <ListView
++        android:id="@+id/card_view_list_view"
++        android:layout_width="match_parent"
++        android:layout_height="529dp"
++        android:layout_gravity="center"
++        app:layout_constraintEnd_toEndOf="parent"
++        app:layout_constraintStart_toStartOf="parent"
++        app:layout_constraintTop_toBottomOf="@+id/imageSlider"
++        tools:ignore="MissingConstraints"
++        tools:listitem="@layout/card_cell" >
++    </ListView>
++
++
++</androidx.constraintlayout.widget.ConstraintLayout>
+\ No newline at end of file
+Index: app/src/main/res/layout/activity_splash_screen.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/res/layout/activity_splash_screen.xml b/app/src/main/res/layout/activity_splash_screen.xml
+new file mode 100644
+--- /dev/null	(revision 0b51aa72c37419cccc7844761f6c0fe30f74a642)
++++ b/app/src/main/res/layout/activity_splash_screen.xml	(revision 0b51aa72c37419cccc7844761f6c0fe30f74a642)
+@@ -0,0 +1,20 @@
++<?xml version="1.0" encoding="utf-8"?>
++<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
++    xmlns:app="http://schemas.android.com/apk/res-auto"
++    xmlns:tools="http://schemas.android.com/tools"
++    android:layout_width="match_parent"
++    android:layout_height="match_parent"
++    tools:context=".SplashScreen">
++
++    <com.airbnb.lottie.LottieAnimationView
++        android:id="@+id/animationView"
++        android:layout_width="match_parent"
++        android:layout_height="0dp"
++        app:layout_constraintBottom_toBottomOf="parent"
++        app:layout_constraintEnd_toEndOf="parent"
++        app:layout_constraintStart_toStartOf="parent"
++        app:layout_constraintTop_toTopOf="parent"
++        app:lottie_autoPlay="true"
++        app:lottie_loop="false"
++        app:lottie_rawRes="@raw/splashscreen" />
++</androidx.constraintlayout.widget.ConstraintLayout>
+\ No newline at end of file
+Index: app/src/main/res/layout/card_cell.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/res/layout/card_cell.xml b/app/src/main/res/layout/card_cell.xml
+new file mode 100644
+--- /dev/null	(revision 0b51aa72c37419cccc7844761f6c0fe30f74a642)
++++ b/app/src/main/res/layout/card_cell.xml	(revision 0b51aa72c37419cccc7844761f6c0fe30f74a642)
+@@ -0,0 +1,58 @@
++<?xml version="1.0" encoding="utf-8"?>
++<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
++    android:layout_width="match_parent"
++    android:layout_height="match_parent"
++    xmlns:app="http://schemas.android.com/apk/res-auto"
++    app:cardElevation="6dp"
++    app:cardUseCompatPadding="true"
++    app:cardPreventCornerOverlap="true">
++
++    <RelativeLayout
++        android:layout_width="379dp"
++        android:layout_height="123dp"
++        android:paddingBottom="4dp">
++
++        <ImageView
++            android:id="@+id/moviePosterPath"
++            android:layout_width="92dp"
++            android:layout_height="118dp"
++            android:layout_alignParentTop="true"
++            android:layout_alignParentBottom="true"
++            android:layout_marginLeft="5dp"
++            android:layout_marginTop="1dp"
++            android:layout_marginBottom="0dp"
++            android:src="@drawable/dragonballposterpath" />
++
++        <TextView
++            android:id="@+id/movieTitle"
++            android:layout_width="271dp"
++            android:layout_height="35dp"
++            android:layout_alignParentStart="true"
++            android:layout_alignParentEnd="true"
++            android:layout_alignParentBottom="true"
++            android:layout_marginStart="101dp"
++            android:layout_marginEnd="7dp"
++            android:layout_marginBottom="88dp"
++            android:text="blaclight title"
++            android:textStyle="bold" />
++
++        <TextView
++            android:id="@+id/movieOverview"
++            android:layout_width="274dp"
++            android:layout_height="84dp"
++            android:layout_alignParentTop="true"
++            android:layout_alignParentEnd="true"
++            android:layout_alignParentBottom="true"
++            android:layout_marginStart="8dp"
++            android:layout_marginLeft="90dp"
++            android:layout_marginTop="35dp"
++            android:layout_marginEnd="0dp"
++            android:layout_marginBottom="4dp"
++            android:layout_toEndOf="@+id/moviePosterPath"
++            android:text="Blaclight overview" />
++
++
++    </RelativeLayout>
++
++
++</com.google.android.material.card.MaterialCardView>
+\ No newline at end of file
+Index: build.gradle
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/build.gradle b/build.gradle
+new file mode 100644
+--- /dev/null	(revision 0b51aa72c37419cccc7844761f6c0fe30f74a642)
++++ b/build.gradle	(revision 0b51aa72c37419cccc7844761f6c0fe30f74a642)
+@@ -0,0 +1,24 @@
++// Top-level build file where you can add configuration options common to all sub-projects/modules.
++
++
++plugins {
++    id 'com.android.application' version '7.2.2' apply false
++    id 'com.android.library' version '7.2.2' apply false
++    id 'org.jetbrains.kotlin.android' version '1.7.10' apply false
++}
++ /*all projects{
++    repositories{
++        google()
++        jcenter()
++        maven {
++            url"https://jitpack.io"
++        }
++    }
++ }*/
++
++
++
++
++task clean(type: Delete) {
++    delete rootProject.buildDir
++}
+\ No newline at end of file
+Index: settings.gradle
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/settings.gradle b/settings.gradle
+new file mode 100644
+--- /dev/null	(revision 0b51aa72c37419cccc7844761f6c0fe30f74a642)
++++ b/settings.gradle	(revision 0b51aa72c37419cccc7844761f6c0fe30f74a642)
+@@ -0,0 +1,22 @@
++pluginManagement {
++    repositories {
++        gradlePluginPortal()
++        google()
++        mavenCentral()
++    }
++}
++dependencyResolutionManagement {
++    repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
++    repositories {
++        google()
++        mavenCentral()
++        maven{ url 'https://jitpack.io'}
++    }
++}
++
++
++
++
++
++rootProject.name = "pickin'"
++include ':app'

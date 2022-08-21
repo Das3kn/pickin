@@ -3,35 +3,31 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="200dp"
+    android:layout_height="match_parent"
     tools:context=".MainActivity">
+
+    <ListView
+        android:id="@+id/card_view_list_view"
+        android:layout_width="406dp"
+        android:layout_height="653dp"
+        android:layout_gravity="center"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageSlider"
+        tools:listitem="@layout/card_cell" />
 
     <com.denzcoskun.imageslider.ImageSlider
         android:id="@+id/imageSlider"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_width="409dp"
+        android:layout_height="235dp"
         app:iss_auto_cycle="true"
-        app:iss_delay="1000"
-        app:iss_period="1000"
-        app:iss_title_background="@color/semitransparent"
+        app:iss_period="3000"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
     </com.denzcoskun.imageslider.ImageSlider>
-
-    <ListView
-        android:id="@+id/card_view_list_view"
-        android:layout_width="match_parent"
-        android:layout_height="529dp"
-        android:layout_gravity="center"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageSlider"
-        tools:ignore="MissingConstraints"
-        tools:listitem="@layout/card_cell" >
-    </ListView>
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

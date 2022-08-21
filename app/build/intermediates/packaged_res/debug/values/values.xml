@@ -10,10 +10,16 @@
     <color name="teal_700">#FF018786</color>
     <color name="white">#FFFFFFFF</color>
     <string name="app_name">pickin\'</string>
+    <string name="blaclight_overview">Blaclight overview</string>
     <string name="dragonball">dragonball</string>
+    <string name="movie_overview"/>
+    <string name="movie_title"/>
     <string name="overview">Overview</string>
+    <string name="overview_overview"/>
+    <string name="overview_title">Overview title</string>
     <string name="posterpath">posterPath</string>
     <string name="textview">TextView</string>
+    <string name="title"/>
     <style name="Theme.Pickin" parent="Theme.MaterialComponents.DayNight.DarkActionBar">
         
         <item name="colorPrimary">@color/grey</item>
