@@ -94,55 +94,64 @@ class MainActivity : AppCompatActivity() ,  OnItemClickListener{
         listItem.add(ResponseModel(
             "Dragonball",
          "Dragonball Overview",
-        R.drawable.dragonballposterpath
+        R.drawable.dragonballposterpath,
+            R.drawable.backdroppath
 
         ))
         listItem.add(ResponseModel(
             "Chickenhare",
             "Chickenhare Overview",
-            R.drawable.chickenhareposterpath
+            R.drawable.chickenhareposterpath,
+            R.drawable.backdroppath
 
         ))
         listItem.add(ResponseModel(
             "Fireheart",
             "Fireheart Overview",
-            R.drawable.fireheartposterpath
+            R.drawable.fireheartposterpath,
+            R.drawable.backdroppath
 
         ))
         listItem.add(ResponseModel(
             "Memory",
             "Memory Overview",
-            R.drawable.memoryposterpath
+            R.drawable.memoryposterpath,
+            R.drawable.backdroppath
 
         ))
         listItem.add(ResponseModel(
             "Minions",
             "Minions Overview",
-            R.drawable.minionsposterpath
+            R.drawable.minionsposterpath,
+            R.drawable.backdroppath
 
         ))
         listItem.add(ResponseModel(
             "Sharkbait",
             "Sharkbait Overview",
-            R.drawable.sharkbaitposterpath
+            R.drawable.sharkbaitposterpath,
+            R.drawable.backdroppath
 
         ))
         listItem.add(ResponseModel(
             "Spiderman",
             "Spiderman Overview",
-            R.drawable.spidermanposterpath
+            R.drawable.spidermanposterpath,
+            R.drawable.backdroppath
 
         ))
         listItem.add(ResponseModel(
             "Superpets",
             "Superpets Overview",
-            R.drawable.superpetsposterpath
+            R.drawable.superpetsposterpath,
+            R.drawable.backdroppath
 
         ))
         listItem.add(ResponseModel(
             "The Northman",
             "The Northman Overview",
-            R.drawable.thenorthmanposterpath
+            R.drawable.thenorthmanposterpath,
+            R.drawable.backdroppath
 
         ))
 
@@ -150,14 +159,25 @@ class MainActivity : AppCompatActivity() ,  OnItemClickListener{
     }
 
     override fun onItemClick(parent: AdapterView<*>?, view: View?, position: Int, id: Long) {
-        val items: ResponseModel = arrayList?.get(position)!!
-        Toast.makeText(applicationContext, items.movieTitle, Toast.LENGTH_LONG).show()
+        val item: ResponseModel = arrayList?.get(position)!!
+        val movieId = item.id
+        val fragmentManager = supportFragmentManager
+        val fragmentTransaction = fragmentManager.beginTransaction()
+        val detailFragment = DetailFragment()
+        fragmentTransaction.replace(R.id.mainAct,detailFragment).commit()
+        val bundle = Bundle()
+        bundle.putInt("movieId",movieId.toInt())
+
+
+
+
+
+
+
+    //Toast.makeText(applicationContext, items.movieTitle, Toast.LENGTH_LONG).show()
     }
 
-    // override fun onItemClick(parent: AdapterView<*>, view: View, position: Int, id: Long) {
-     //   val items: ResponseModel = arrayList?.get(position)!!
-       // Toast.makeText(applicationContext, items.movieTitle, Toast.LENGTH_LONG).show()
-    //}
+
 
 
 }

@@ -15,6 +15,6 @@ class ResponseModel (
         )*/
         val movieTitle: String,
         val movieOverview : String,
-        val moviePosterPath : Int)
-        //var backdrop_path : Any)
-val id: Int = modelList.size
+        val moviePosterPath : Int,
+        val movieBackdroppath : Int,
+val id: Int = modelList.size)
