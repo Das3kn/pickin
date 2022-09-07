@@ -9,6 +9,7 @@ color semitransparent
 color teal_200
 color teal_700
 color white
+drawable backdroppath
 drawable chickenhareposterpath
 drawable dragonballposterpath
 drawable fireheartposterpath
@@ -23,6 +24,8 @@ drawable thenorthmanposterpath
 id animationView
 id card_view_list_view
 id imageSlider
+id mainAct
+id movieBackdropPath
 id movieOverview
 id moviePosterPath
 id movieTitle
@@ -30,12 +33,14 @@ id relativeLayout
 layout activity_main
 layout activity_splash_screen
 layout card_cell
+layout fragment_detail
 mipmap ic_launcher
 mipmap ic_launcher_round
 raw splashscreen
 string app_name
 string blaclight_overview
 string dragonball
+string hello_blank_fragment
 string movie_overview
 string movie_title
 string overview

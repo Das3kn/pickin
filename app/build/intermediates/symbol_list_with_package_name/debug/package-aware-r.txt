@@ -2477,6 +2477,7 @@ drawable abc_textfield_search_material
 drawable abc_vector_test
 drawable avd_hide_password
 drawable avd_show_password
+drawable backdroppath
 drawable btn_checkbox_checked_mtrl
 drawable btn_checkbox_checked_to_unchecked_mtrl_animation
 drawable btn_checkbox_unchecked_mtrl
@@ -2813,6 +2814,7 @@ id linear_layout
 id listMode
 id list_item
 id lottie_layer_name
+id mainAct
 id masked
 id match_constraint
 id match_parent
@@ -2846,6 +2848,7 @@ id month_navigation_next
 id month_navigation_previous
 id month_title
 id motion_base
+id movieBackdropPath
 id movieOverview
 id moviePosterPath
 id movieTitle
@@ -3175,6 +3178,7 @@ layout design_navigation_menu
 layout design_navigation_menu_item
 layout design_text_input_end_icon
 layout design_text_input_start_icon
+layout fragment_detail
 layout image_slider
 layout m3_alert_dialog
 layout m3_alert_dialog_actions
@@ -3298,6 +3302,7 @@ string error_icon_content_description
 string exposed_dropdown_menu_content_description
 string fab_transformation_scrim_behavior
 string fab_transformation_sheet_behavior
+string hello_blank_fragment
 string hide_bottom_view_on_scroll_behavior
 string icon_content_description
 string item_view_role_description

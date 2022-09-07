@@ -12,6 +12,7 @@ import com.bugrakaragozoglu.pickin.model.ResponseModel
 import com.denzcoskun.imageslider.ImageSlider
 import com.denzcoskun.imageslider.constants.ScaleTypes
 import com.denzcoskun.imageslider.models.SlideModel
+import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() ,  OnItemClickListener{
     //private val baseURL: String = "https://api.themoviedb.org/3/"
@@ -164,12 +165,12 @@ class MainActivity : AppCompatActivity() ,  OnItemClickListener{
         val fragmentManager = supportFragmentManager
         val fragmentTransaction = fragmentManager.beginTransaction()
         val detailFragment = DetailFragment()
-        fragmentTransaction.replace(R.id.mainAct,detailFragment).commit()
         val bundle = Bundle()
         bundle.putInt("movieId",movieId.toInt())
-
-
-
+        detailFragment.arguments=bundle
+        fragmentTransaction.replace(R.id.mainAct,detailFragment)
+        fragmentTransaction.addToBackStack("mainAct")
+        fragmentTransaction.commit()
 
 
 

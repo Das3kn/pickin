@@ -2,6 +2,8 @@ package com.bugrakaragozoglu.pickin.model
 
 import androidx.appcompat.widget.DialogTitle
 import com.google.gson.annotations.SerializedName
+import kotlin.random.Random
+
 var modelList = mutableListOf<ResponseModel>()
 class ResponseModel (
        /* @SerializedName("backdrop_path")
@@ -17,4 +19,4 @@ class ResponseModel (
         val movieOverview : String,
         val moviePosterPath : Int,
         val movieBackdroppath : Int,
-val id: Int = modelList.size)
+        val id: Int = Random.nextInt())
