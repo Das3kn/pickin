@@ -6,10 +6,9 @@ import android.view.View
 import android.widget.AdapterView
 import android.widget.AdapterView.OnItemClickListener
 import android.widget.ListView
-import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.bugrakaragozoglu.pickin.adapter.CardCellAdapter
-import com.bugrakaragozoglu.pickin.model.NowPlayingResponse
+import com.bugrakaragozoglu.pickin.model.CommonResponse
 import com.bugrakaragozoglu.pickin.model.ResponseModel
 import com.bugrakaragozoglu.pickin.service.TheMovieClient
 import com.denzcoskun.imageslider.ImageSlider
@@ -18,7 +17,6 @@ import com.denzcoskun.imageslider.models.SlideModel
 import com.google.gson.Gson
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.schedulers.Schedulers
-import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() ,  OnItemClickListener{
 
@@ -38,7 +36,7 @@ class MainActivity : AppCompatActivity() ,  OnItemClickListener{
         TheMovieClient.getInstance().getNowPlaying()
             .subscribeOn(Schedulers.io())
             .observeOn(AndroidSchedulers.mainThread())
-            .subscribe(this::handleResponse, this::onError)
+            .subscribe(this::handleNowPlayingResponse, this::onError)
 
 
         val imageList = ArrayList<SlideModel>()
@@ -103,8 +101,9 @@ class MainActivity : AppCompatActivity() ,  OnItemClickListener{
 
     }
 
-    private fun handleResponse(result: NowPlayingResponse){
+    private fun handleNowPlayingResponse(result: CommonResponse){
         print(Gson().toJson(result))
+        result.movies
     }
 
     private fun onError(t : Throwable){

@@ -10,7 +10,7 @@ import java.util.concurrent.TimeUnit
 
 object TheMovieClient {
     val baseURL: String = "https://api.themoviedb.org/3/"
-    const val apiKey = "808f9e99f5c44c0619283e52ca6b455"
+    const val apiKey = "808f9e99f5c44c0619283e52ca6b455c"
     private var retrofit: Retrofit? = null
 
     fun getInstance() : TheMovieAPI{

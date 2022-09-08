@@ -1,15 +1,12 @@
 package com.bugrakaragozoglu.pickin.service
 
-import com.bugrakaragozoglu.pickin.model.NowPlayingResponse
-import com.bugrakaragozoglu.pickin.model.ResponseModel
+import com.bugrakaragozoglu.pickin.model.CommonResponse
 import io.reactivex.Observable
 import retrofit2.http.GET
 
 interface TheMovieAPI {
         @GET("movie/now_playing?api_key=${TheMovieClient.apiKey}")
-        fun getNowPlaying(): Observable<NowPlayingResponse>
+        fun getNowPlaying(): Observable<CommonResponse>
         @GET("movie/upcoming?api_key=${TheMovieClient.apiKey}")
-        fun getUpComing(): Observable<List<ResponseModel>>
+        fun getUpComing(): Observable<CommonResponse>
 }
-//https://api.themoviedb.org/3/movie/now_playing?api_key=808f9e99f5c44c0619283e52ca6b455c
-//https://api.themoviedb.org/3/movie/upcoming?api_key=808f9e99f5c44c0619283e52ca6b455c
