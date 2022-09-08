@@ -29,7 +29,8 @@
             android:exported="false" />
         <activity
             android:name="com.bugrakaragozoglu.pickin.SplashScreen"
-            android:exported="true" >
+            android:exported="true"
+            android:noHistory="true" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

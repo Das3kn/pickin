@@ -9,10 +9,11 @@
         <entry key="..\:/Users/filiz/AndroidStudioProjects/pickin/app/src/main/res/layout/card_cell.xml" value="0.4" />
         <entry key="..\:/Users/filiz/AndroidStudioProjects/pickin/app/src/main/res/layout/fragment_detail.xml" value="0.13383838383838384" />
         <entry key="..\:/Users/filiz/AndroidStudioProjects/pickin/app/src/main/res/layout/row_layout.xml" value="0.2" />
+        <entry key="app/src/main/res/layout/activity_splash_screen.xml" value="0.34843950406156476" />
       </map>
     </option>
   </component>
-  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="Android Studio default JDK" project-jdk-type="JavaSDK">
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" project-jdk-name="11" project-jdk-type="JavaSDK">
     <output url="file://$PROJECT_DIR$/build/classes" />
   </component>
   <component name="ProjectType">

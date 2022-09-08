@@ -1,5 +1,6 @@
 package com.bugrakaragozoglu.pickin
 
+import android.annotation.SuppressLint
 import android.os.Bundle
 import android.view.View
 import android.widget.AdapterView
@@ -8,14 +9,19 @@ import android.widget.ListView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.bugrakaragozoglu.pickin.adapter.CardCellAdapter
+import com.bugrakaragozoglu.pickin.model.NowPlayingResponse
 import com.bugrakaragozoglu.pickin.model.ResponseModel
+import com.bugrakaragozoglu.pickin.service.TheMovieClient
 import com.denzcoskun.imageslider.ImageSlider
 import com.denzcoskun.imageslider.constants.ScaleTypes
 import com.denzcoskun.imageslider.models.SlideModel
+import com.google.gson.Gson
+import io.reactivex.android.schedulers.AndroidSchedulers
+import io.reactivex.schedulers.Schedulers
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() ,  OnItemClickListener{
-    //private val baseURL: String = "https://api.themoviedb.org/3/"
+
 
     //private var ResponseModel : ArrayList<ResponseModel>? = null
     //private lateinit var binding : ActivityMinBinding
@@ -23,10 +29,17 @@ class MainActivity : AppCompatActivity() ,  OnItemClickListener{
     private var movieAdapter: CardCellAdapter? = null
     private var arrayList: ArrayList<ResponseModel>? = null
 
+    @SuppressLint("CheckResult")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         supportActionBar?.hide()
+
+        TheMovieClient.getInstance().getNowPlaying()
+            .subscribeOn(Schedulers.io())
+            .observeOn(AndroidSchedulers.mainThread())
+            .subscribe(this::handleResponse, this::onError)
+
 
         val imageList = ArrayList<SlideModel>()
         imageList.add(
@@ -88,6 +101,14 @@ class MainActivity : AppCompatActivity() ,  OnItemClickListener{
         //}
 
 
+    }
+
+    private fun handleResponse(result: NowPlayingResponse){
+        print(Gson().toJson(result))
+    }
+
+    private fun onError(t : Throwable){
+        print(t.message)
     }
 
     private fun setDataItem(): ArrayList<ResponseModel> {
@@ -177,8 +198,6 @@ class MainActivity : AppCompatActivity() ,  OnItemClickListener{
 
     //Toast.makeText(applicationContext, items.movieTitle, Toast.LENGTH_LONG).show()
     }
-
-
 
 
 }
