@@ -6,95 +6,129 @@
 6
 7    <uses-sdk
 8        android:minSdkVersion="24"
-8-->/Users/ahmetcetinkaya/Desktop/Geobilgi_Android_Apps/pickin/app/src/main/AndroidManifest.xml
+8-->C:\Users\filiz\AndroidStudioProjects\pickin\app\src\main\AndroidManifest.xml
 9        android:targetSdkVersion="32" />
-9-->/Users/ahmetcetinkaya/Desktop/Geobilgi_Android_Apps/pickin/app/src/main/AndroidManifest.xml
+9-->C:\Users\filiz\AndroidStudioProjects\pickin\app\src\main\AndroidManifest.xml
 10
 11    <uses-permission android:name="android.permission.INTERNET" />
-11-->/Users/ahmetcetinkaya/Desktop/Geobilgi_Android_Apps/pickin/app/src/main/AndroidManifest.xml:6:5-67
-11-->/Users/ahmetcetinkaya/Desktop/Geobilgi_Android_Apps/pickin/app/src/main/AndroidManifest.xml:6:22-64
+11-->C:\Users\filiz\AndroidStudioProjects\pickin\app\src\main\AndroidManifest.xml:6:5-67
+11-->C:\Users\filiz\AndroidStudioProjects\pickin\app\src\main\AndroidManifest.xml:6:22-64
 12    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
-12-->/Users/ahmetcetinkaya/Desktop/Geobilgi_Android_Apps/pickin/app/src/main/AndroidManifest.xml:7:5-79
-12-->/Users/ahmetcetinkaya/Desktop/Geobilgi_Android_Apps/pickin/app/src/main/AndroidManifest.xml:7:22-76
+12-->C:\Users\filiz\AndroidStudioProjects\pickin\app\src\main\AndroidManifest.xml:7:5-79
+12-->C:\Users\filiz\AndroidStudioProjects\pickin\app\src\main\AndroidManifest.xml:7:22-76
 13
 14    <application
-14-->/Users/ahmetcetinkaya/Desktop/Geobilgi_Android_Apps/pickin/app/src/main/AndroidManifest.xml:8:5-32:19
+14-->C:\Users\filiz\AndroidStudioProjects\pickin\app\src\main\AndroidManifest.xml:8:5-33:19
 15        android:allowBackup="true"
-15-->/Users/ahmetcetinkaya/Desktop/Geobilgi_Android_Apps/pickin/app/src/main/AndroidManifest.xml:9:9-35
+15-->C:\Users\filiz\AndroidStudioProjects\pickin\app\src\main\AndroidManifest.xml:10:9-35
 16        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
-16-->[androidx.core:core:1.8.0] /Users/ahmetcetinkaya/.gradle/caches/transforms-3/319818de8066db9dee1015fa48896948/transformed/core-1.8.0/AndroidManifest.xml:24:18-86
+16-->[androidx.core:core:1.8.0] C:\Users\filiz\.gradle\caches\transforms-3\319818de8066db9dee1015fa48896948\transformed\core-1.8.0\AndroidManifest.xml:24:18-86
 17        android:dataExtractionRules="@xml/data_extraction_rules"
-17-->/Users/ahmetcetinkaya/Desktop/Geobilgi_Android_Apps/pickin/app/src/main/AndroidManifest.xml:10:9-65
+17-->C:\Users\filiz\AndroidStudioProjects\pickin\app\src\main\AndroidManifest.xml:11:9-65
 18        android:debuggable="true"
 19        android:extractNativeLibs="false"
 20        android:fullBackupContent="@xml/backup_rules"
-20-->/Users/ahmetcetinkaya/Desktop/Geobilgi_Android_Apps/pickin/app/src/main/AndroidManifest.xml:11:9-54
+20-->C:\Users\filiz\AndroidStudioProjects\pickin\app\src\main\AndroidManifest.xml:12:9-54
 21        android:icon="@mipmap/ic_launcher"
-21-->/Users/ahmetcetinkaya/Desktop/Geobilgi_Android_Apps/pickin/app/src/main/AndroidManifest.xml:12:9-43
+21-->C:\Users\filiz\AndroidStudioProjects\pickin\app\src\main\AndroidManifest.xml:13:9-43
 22        android:label="@string/app_name"
-22-->/Users/ahmetcetinkaya/Desktop/Geobilgi_Android_Apps/pickin/app/src/main/AndroidManifest.xml:13:9-41
+22-->C:\Users\filiz\AndroidStudioProjects\pickin\app\src\main\AndroidManifest.xml:14:9-41
 23        android:roundIcon="@mipmap/ic_launcher_round"
-23-->/Users/ahmetcetinkaya/Desktop/Geobilgi_Android_Apps/pickin/app/src/main/AndroidManifest.xml:14:9-54
+23-->C:\Users\filiz\AndroidStudioProjects\pickin\app\src\main\AndroidManifest.xml:15:9-54
 24        android:supportsRtl="true"
-24-->/Users/ahmetcetinkaya/Desktop/Geobilgi_Android_Apps/pickin/app/src/main/AndroidManifest.xml:15:9-35
+24-->C:\Users\filiz\AndroidStudioProjects\pickin\app\src\main\AndroidManifest.xml:16:9-35
 25        android:testOnly="true"
-26        android:theme="@style/Theme.Pickin" >
-26-->/Users/ahmetcetinkaya/Desktop/Geobilgi_Android_Apps/pickin/app/src/main/AndroidManifest.xml:16:9-44
-27        <activity
-27-->/Users/ahmetcetinkaya/Desktop/Geobilgi_Android_Apps/pickin/app/src/main/AndroidManifest.xml:18:9-20:40
-28            android:name="com.bugrakaragozoglu.pickin.MainActivity"
-28-->/Users/ahmetcetinkaya/Desktop/Geobilgi_Android_Apps/pickin/app/src/main/AndroidManifest.xml:19:13-41
-29            android:exported="false" />
-29-->/Users/ahmetcetinkaya/Desktop/Geobilgi_Android_Apps/pickin/app/src/main/AndroidManifest.xml:20:13-37
-30        <activity
-30-->/Users/ahmetcetinkaya/Desktop/Geobilgi_Android_Apps/pickin/app/src/main/AndroidManifest.xml:22:9-31:20
-31            android:name="com.bugrakaragozoglu.pickin.SplashScreen"
-31-->/Users/ahmetcetinkaya/Desktop/Geobilgi_Android_Apps/pickin/app/src/main/AndroidManifest.xml:23:13-41
-32            android:exported="true"
-32-->/Users/ahmetcetinkaya/Desktop/Geobilgi_Android_Apps/pickin/app/src/main/AndroidManifest.xml:25:13-36
-33            android:noHistory="true" >
-33-->/Users/ahmetcetinkaya/Desktop/Geobilgi_Android_Apps/pickin/app/src/main/AndroidManifest.xml:24:13-37
-34            <intent-filter>
-34-->/Users/ahmetcetinkaya/Desktop/Geobilgi_Android_Apps/pickin/app/src/main/AndroidManifest.xml:26:13-30:29
-35                <action android:name="android.intent.action.MAIN" />
-35-->/Users/ahmetcetinkaya/Desktop/Geobilgi_Android_Apps/pickin/app/src/main/AndroidManifest.xml:27:17-69
-35-->/Users/ahmetcetinkaya/Desktop/Geobilgi_Android_Apps/pickin/app/src/main/AndroidManifest.xml:27:25-66
-36
-37                <category android:name="android.intent.category.LAUNCHER" />
-37-->/Users/ahmetcetinkaya/Desktop/Geobilgi_Android_Apps/pickin/app/src/main/AndroidManifest.xml:29:17-77
-37-->/Users/ahmetcetinkaya/Desktop/Geobilgi_Android_Apps/pickin/app/src/main/AndroidManifest.xml:29:27-74
-38            </intent-filter>
-39        </activity>
-40
-41        <provider
-41-->[androidx.emoji2:emoji2:1.2.0] /Users/ahmetcetinkaya/.gradle/caches/transforms-3/8646fc24a05f0f3fb603801ddeb6af39/transformed/emoji2-1.2.0/AndroidManifest.xml:24:9-32:20
-42            android:name="androidx.startup.InitializationProvider"
-42-->[androidx.emoji2:emoji2:1.2.0] /Users/ahmetcetinkaya/.gradle/caches/transforms-3/8646fc24a05f0f3fb603801ddeb6af39/transformed/emoji2-1.2.0/AndroidManifest.xml:25:13-67
-43            android:authorities="com.bugrakaragozoglu.pickin.androidx-startup"
-43-->[androidx.emoji2:emoji2:1.2.0] /Users/ahmetcetinkaya/.gradle/caches/transforms-3/8646fc24a05f0f3fb603801ddeb6af39/transformed/emoji2-1.2.0/AndroidManifest.xml:26:13-68
-44            android:exported="false" >
-44-->[androidx.emoji2:emoji2:1.2.0] /Users/ahmetcetinkaya/.gradle/caches/transforms-3/8646fc24a05f0f3fb603801ddeb6af39/transformed/emoji2-1.2.0/AndroidManifest.xml:27:13-37
-45            <meta-data
-45-->[androidx.emoji2:emoji2:1.2.0] /Users/ahmetcetinkaya/.gradle/caches/transforms-3/8646fc24a05f0f3fb603801ddeb6af39/transformed/emoji2-1.2.0/AndroidManifest.xml:29:13-31:52
-46                android:name="androidx.emoji2.text.EmojiCompatInitializer"
-46-->[androidx.emoji2:emoji2:1.2.0] /Users/ahmetcetinkaya/.gradle/caches/transforms-3/8646fc24a05f0f3fb603801ddeb6af39/transformed/emoji2-1.2.0/AndroidManifest.xml:30:17-75
-47                android:value="androidx.startup" />
-47-->[androidx.emoji2:emoji2:1.2.0] /Users/ahmetcetinkaya/.gradle/caches/transforms-3/8646fc24a05f0f3fb603801ddeb6af39/transformed/emoji2-1.2.0/AndroidManifest.xml:31:17-49
-48            <meta-data
-48-->[androidx.lifecycle:lifecycle-process:2.4.1] /Users/ahmetcetinkaya/.gradle/caches/transforms-3/a12ed9220754cce2dddf3ed6d58bf3a3/transformed/lifecycle-process-2.4.1/AndroidManifest.xml:31:13-33:52
-49                android:name="androidx.lifecycle.ProcessLifecycleInitializer"
-49-->[androidx.lifecycle:lifecycle-process:2.4.1] /Users/ahmetcetinkaya/.gradle/caches/transforms-3/a12ed9220754cce2dddf3ed6d58bf3a3/transformed/lifecycle-process-2.4.1/AndroidManifest.xml:32:17-78
-50                android:value="androidx.startup" />
-50-->[androidx.lifecycle:lifecycle-process:2.4.1] /Users/ahmetcetinkaya/.gradle/caches/transforms-3/a12ed9220754cce2dddf3ed6d58bf3a3/transformed/lifecycle-process-2.4.1/AndroidManifest.xml:33:17-49
-51        </provider>
-52        <provider
-52-->[com.squareup.picasso:picasso:2.71828] /Users/ahmetcetinkaya/.gradle/caches/transforms-3/7c58571da1c11df00ba6c1ef25de76ab/transformed/picasso-2.71828/AndroidManifest.xml:8:9-11:40
-53            android:name="com.squareup.picasso.PicassoProvider"
-53-->[com.squareup.picasso:picasso:2.71828] /Users/ahmetcetinkaya/.gradle/caches/transforms-3/7c58571da1c11df00ba6c1ef25de76ab/transformed/picasso-2.71828/AndroidManifest.xml:9:13-64
-54            android:authorities="com.bugrakaragozoglu.pickin.com.squareup.picasso"
-54-->[com.squareup.picasso:picasso:2.71828] /Users/ahmetcetinkaya/.gradle/caches/transforms-3/7c58571da1c11df00ba6c1ef25de76ab/transformed/picasso-2.71828/AndroidManifest.xml:10:13-72
-55            android:exported="false" />
-55-->[com.squareup.picasso:picasso:2.71828] /Users/ahmetcetinkaya/.gradle/caches/transforms-3/7c58571da1c11df00ba6c1ef25de76ab/transformed/picasso-2.71828/AndroidManifest.xml:11:13-37
-56    </application>
-57
-58</manifest>
+26        android:theme="@style/Theme.Pickin"
+26-->C:\Users\filiz\AndroidStudioProjects\pickin\app\src\main\AndroidManifest.xml:17:9-44
+27        android:usesCleartextTraffic="true" >
+27-->C:\Users\filiz\AndroidStudioProjects\pickin\app\src\main\AndroidManifest.xml:9:9-44
+28        <activity
+28-->C:\Users\filiz\AndroidStudioProjects\pickin\app\src\main\AndroidManifest.xml:19:9-21:40
+29            android:name="com.bugrakaragozoglu.pickin.MainActivity"
+29-->C:\Users\filiz\AndroidStudioProjects\pickin\app\src\main\AndroidManifest.xml:20:13-41
+30            android:exported="false" />
+30-->C:\Users\filiz\AndroidStudioProjects\pickin\app\src\main\AndroidManifest.xml:21:13-37
+31        <activity
+31-->C:\Users\filiz\AndroidStudioProjects\pickin\app\src\main\AndroidManifest.xml:23:9-32:20
+32            android:name="com.bugrakaragozoglu.pickin.SplashScreen"
+32-->C:\Users\filiz\AndroidStudioProjects\pickin\app\src\main\AndroidManifest.xml:24:13-41
+33            android:exported="true"
+33-->C:\Users\filiz\AndroidStudioProjects\pickin\app\src\main\AndroidManifest.xml:26:13-36
+34            android:noHistory="true" >
+34-->C:\Users\filiz\AndroidStudioProjects\pickin\app\src\main\AndroidManifest.xml:25:13-37
+35            <intent-filter>
+35-->C:\Users\filiz\AndroidStudioProjects\pickin\app\src\main\AndroidManifest.xml:27:13-31:29
+36                <action android:name="android.intent.action.MAIN" />
+36-->C:\Users\filiz\AndroidStudioProjects\pickin\app\src\main\AndroidManifest.xml:28:17-69
+36-->C:\Users\filiz\AndroidStudioProjects\pickin\app\src\main\AndroidManifest.xml:28:25-66
+37
+38                <category android:name="android.intent.category.LAUNCHER" />
+38-->C:\Users\filiz\AndroidStudioProjects\pickin\app\src\main\AndroidManifest.xml:30:17-77
+38-->C:\Users\filiz\AndroidStudioProjects\pickin\app\src\main\AndroidManifest.xml:30:27-74
+39            </intent-filter>
+40        </activity>
+41
+42        <provider
+42-->[com.squareup.picasso:picasso:2.71828] C:\Users\filiz\.gradle\caches\transforms-3\7c58571da1c11df00ba6c1ef25de76ab\transformed\picasso-2.71828\AndroidManifest.xml:8:9-11:40
+43            android:name="com.squareup.picasso.PicassoProvider"
+43-->[com.squareup.picasso:picasso:2.71828] C:\Users\filiz\.gradle\caches\transforms-3\7c58571da1c11df00ba6c1ef25de76ab\transformed\picasso-2.71828\AndroidManifest.xml:9:13-64
+44            android:authorities="com.bugrakaragozoglu.pickin.com.squareup.picasso"
+44-->[com.squareup.picasso:picasso:2.71828] C:\Users\filiz\.gradle\caches\transforms-3\7c58571da1c11df00ba6c1ef25de76ab\transformed\picasso-2.71828\AndroidManifest.xml:10:13-72
+45            android:exported="false" />
+45-->[com.squareup.picasso:picasso:2.71828] C:\Users\filiz\.gradle\caches\transforms-3\7c58571da1c11df00ba6c1ef25de76ab\transformed\picasso-2.71828\AndroidManifest.xml:11:13-37
+46        <provider
+46-->[androidx.emoji2:emoji2:1.2.0] C:\Users\filiz\.gradle\caches\transforms-3\8646fc24a05f0f3fb603801ddeb6af39\transformed\emoji2-1.2.0\AndroidManifest.xml:24:9-32:20
+47            android:name="androidx.startup.InitializationProvider"
+47-->[androidx.emoji2:emoji2:1.2.0] C:\Users\filiz\.gradle\caches\transforms-3\8646fc24a05f0f3fb603801ddeb6af39\transformed\emoji2-1.2.0\AndroidManifest.xml:25:13-67
+48            android:authorities="com.bugrakaragozoglu.pickin.androidx-startup"
+48-->[androidx.emoji2:emoji2:1.2.0] C:\Users\filiz\.gradle\caches\transforms-3\8646fc24a05f0f3fb603801ddeb6af39\transformed\emoji2-1.2.0\AndroidManifest.xml:26:13-68
+49            android:exported="false" >
+49-->[androidx.emoji2:emoji2:1.2.0] C:\Users\filiz\.gradle\caches\transforms-3\8646fc24a05f0f3fb603801ddeb6af39\transformed\emoji2-1.2.0\AndroidManifest.xml:27:13-37
+50            <meta-data
+50-->[androidx.emoji2:emoji2:1.2.0] C:\Users\filiz\.gradle\caches\transforms-3\8646fc24a05f0f3fb603801ddeb6af39\transformed\emoji2-1.2.0\AndroidManifest.xml:29:13-31:52
+51                android:name="androidx.emoji2.text.EmojiCompatInitializer"
+51-->[androidx.emoji2:emoji2:1.2.0] C:\Users\filiz\.gradle\caches\transforms-3\8646fc24a05f0f3fb603801ddeb6af39\transformed\emoji2-1.2.0\AndroidManifest.xml:30:17-75
+52                android:value="androidx.startup" />
+52-->[androidx.emoji2:emoji2:1.2.0] C:\Users\filiz\.gradle\caches\transforms-3\8646fc24a05f0f3fb603801ddeb6af39\transformed\emoji2-1.2.0\AndroidManifest.xml:31:17-49
+53            <meta-data
+53-->[androidx.lifecycle:lifecycle-process:2.4.1] C:\Users\filiz\.gradle\caches\transforms-3\a12ed9220754cce2dddf3ed6d58bf3a3\transformed\lifecycle-process-2.4.1\AndroidManifest.xml:31:13-33:52
+54                android:name="androidx.lifecycle.ProcessLifecycleInitializer"
+54-->[androidx.lifecycle:lifecycle-process:2.4.1] C:\Users\filiz\.gradle\caches\transforms-3\a12ed9220754cce2dddf3ed6d58bf3a3\transformed\lifecycle-process-2.4.1\AndroidManifest.xml:32:17-78
+55                android:value="androidx.startup" />
+55-->[androidx.lifecycle:lifecycle-process:2.4.1] C:\Users\filiz\.gradle\caches\transforms-3\a12ed9220754cce2dddf3ed6d58bf3a3\transformed\lifecycle-process-2.4.1\AndroidManifest.xml:33:17-49
+56            <meta-data
+56-->[androidx.profileinstaller:profileinstaller:1.2.0] C:\Users\filiz\.gradle\caches\transforms-3\19a0c00ab3174edbe11930c102e22c9f\transformed\profileinstaller-1.2.0\AndroidManifest.xml:30:13-32:52
+57                android:name="androidx.profileinstaller.ProfileInstallerInitializer"
+57-->[androidx.profileinstaller:profileinstaller:1.2.0] C:\Users\filiz\.gradle\caches\transforms-3\19a0c00ab3174edbe11930c102e22c9f\transformed\profileinstaller-1.2.0\AndroidManifest.xml:31:17-85
+58                android:value="androidx.startup" />
+58-->[androidx.profileinstaller:profileinstaller:1.2.0] C:\Users\filiz\.gradle\caches\transforms-3\19a0c00ab3174edbe11930c102e22c9f\transformed\profileinstaller-1.2.0\AndroidManifest.xml:32:17-49
+59        </provider>
+60
+61        <receiver
+61-->[androidx.profileinstaller:profileinstaller:1.2.0] C:\Users\filiz\.gradle\caches\transforms-3\19a0c00ab3174edbe11930c102e22c9f\transformed\profileinstaller-1.2.0\AndroidManifest.xml:35:9-47:20
+62            android:name="androidx.profileinstaller.ProfileInstallReceiver"
+62-->[androidx.profileinstaller:profileinstaller:1.2.0] C:\Users\filiz\.gradle\caches\transforms-3\19a0c00ab3174edbe11930c102e22c9f\transformed\profileinstaller-1.2.0\AndroidManifest.xml:36:13-76
+63            android:directBootAware="false"
+63-->[androidx.profileinstaller:profileinstaller:1.2.0] C:\Users\filiz\.gradle\caches\transforms-3\19a0c00ab3174edbe11930c102e22c9f\transformed\profileinstaller-1.2.0\AndroidManifest.xml:37:13-44
+64            android:enabled="true"
+64-->[androidx.profileinstaller:profileinstaller:1.2.0] C:\Users\filiz\.gradle\caches\transforms-3\19a0c00ab3174edbe11930c102e22c9f\transformed\profileinstaller-1.2.0\AndroidManifest.xml:38:13-35
+65            android:exported="true"
+65-->[androidx.profileinstaller:profileinstaller:1.2.0] C:\Users\filiz\.gradle\caches\transforms-3\19a0c00ab3174edbe11930c102e22c9f\transformed\profileinstaller-1.2.0\AndroidManifest.xml:39:13-36
+66            android:permission="android.permission.DUMP" >
+66-->[androidx.profileinstaller:profileinstaller:1.2.0] C:\Users\filiz\.gradle\caches\transforms-3\19a0c00ab3174edbe11930c102e22c9f\transformed\profileinstaller-1.2.0\AndroidManifest.xml:40:13-57
+67            <intent-filter>
+67-->[androidx.profileinstaller:profileinstaller:1.2.0] C:\Users\filiz\.gradle\caches\transforms-3\19a0c00ab3174edbe11930c102e22c9f\transformed\profileinstaller-1.2.0\AndroidManifest.xml:41:13-43:29
+68                <action android:name="androidx.profileinstaller.action.INSTALL_PROFILE" />
+68-->[androidx.profileinstaller:profileinstaller:1.2.0] C:\Users\filiz\.gradle\caches\transforms-3\19a0c00ab3174edbe11930c102e22c9f\transformed\profileinstaller-1.2.0\AndroidManifest.xml:42:17-91
+68-->[androidx.profileinstaller:profileinstaller:1.2.0] C:\Users\filiz\.gradle\caches\transforms-3\19a0c00ab3174edbe11930c102e22c9f\transformed\profileinstaller-1.2.0\AndroidManifest.xml:42:25-88
+69            </intent-filter>
+70            <intent-filter>
+70-->[androidx.profileinstaller:profileinstaller:1.2.0] C:\Users\filiz\.gradle\caches\transforms-3\19a0c00ab3174edbe11930c102e22c9f\transformed\profileinstaller-1.2.0\AndroidManifest.xml:44:13-46:29
+71                <action android:name="androidx.profileinstaller.action.SKIP_FILE" />
+71-->[androidx.profileinstaller:profileinstaller:1.2.0] C:\Users\filiz\.gradle\caches\transforms-3\19a0c00ab3174edbe11930c102e22c9f\transformed\profileinstaller-1.2.0\AndroidManifest.xml:45:17-85
+71-->[androidx.profileinstaller:profileinstaller:1.2.0] C:\Users\filiz\.gradle\caches\transforms-3\19a0c00ab3174edbe11930c102e22c9f\transformed\profileinstaller-1.2.0\AndroidManifest.xml:45:25-82
+72            </intent-filter>
+73        </receiver>
+74    </application>
+75
+76</manifest>

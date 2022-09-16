@@ -1807,6 +1807,8 @@ color text_shadow
 color text_shadow_white
 color tooltip_background_dark
 color tooltip_background_light
+color vector_tint_color
+color vector_tint_theme_color
 color white
 dimen abc_action_bar_content_inset_material
 dimen abc_action_bar_content_inset_with_nav
@@ -2498,6 +2500,7 @@ drawable dragonballposterpath
 drawable error
 drawable fireheartposterpath
 drawable gradient
+drawable ic_100tb
 drawable ic_clock_black_24dp
 drawable ic_keyboard_black_24dp
 drawable ic_launcher_background
@@ -2638,6 +2641,7 @@ id aligned
 id all
 id allStates
 id always
+id androidx_compose_ui_view_composition_context
 id animateToEnd
 id animateToStart
 id animationView
@@ -2690,10 +2694,13 @@ id clip_horizontal
 id clip_vertical
 id clockwise
 id closest
+id coil_request_manager
 id collapseActionView
+id compose_view_saveable_id_tag
 id compress
 id confirm_button
 id constraint
+id consume_window_insets_tag
 id container
 id content
 id contentPanel
@@ -2780,6 +2787,7 @@ id groups
 id guideline
 id hardware
 id header_title
+id hide_in_inspector_tag
 id hideable
 id home
 id homeAsUp
@@ -2796,8 +2804,10 @@ id image_view
 id immediateStop
 id included
 id info
+id inspection_slot_table_set
 id invisible
 id inward
+id is_pooling_container_tag
 id italic
 id item_touch_helper_previous_elevation
 id jumpToEnd
@@ -2913,6 +2923,7 @@ id pathRelative
 id peekHeight
 id percent
 id pin
+id pooling_container_listener_holder_tag
 id position
 id postLayout
 id progress_circular
@@ -3064,6 +3075,7 @@ id withinBounds
 id wrap
 id wrap_content
 id wrap_content_constrained
+id wrapped_composition_tag
 id x_left
 id x_right
 id zero_corner_chip
@@ -3297,7 +3309,12 @@ string character_counter_overflowed_content_description
 string character_counter_pattern
 string chip_text
 string clear_text_end_icon_content_description
+string close_drawer
+string close_sheet
+string default_error_message
+string default_popup_window_title
 string dragonball
+string dropdown_menu
 string error_icon_content_description
 string exposed_dropdown_menu_content_description
 string fab_transformation_scrim_behavior
@@ -3305,6 +3322,8 @@ string fab_transformation_sheet_behavior
 string hello_blank_fragment
 string hide_bottom_view_on_scroll_behavior
 string icon_content_description
+string in_progress
+string indeterminate
 string item_view_role_description
 string label
 string left
@@ -3381,6 +3400,10 @@ string mtrl_picker_toggle_to_day_selection
 string mtrl_picker_toggle_to_text_input_mode
 string mtrl_picker_toggle_to_year_selection
 string mtrl_timepicker_confirm
+string navigation_menu
+string not_selected
+string off
+string on
 string overview
 string overview_overview
 string overview_title
@@ -3390,8 +3413,13 @@ string path_password_eye_mask_strike_through
 string path_password_eye_mask_visible
 string path_password_strike_through
 string posterpath
+string range_end
+string range_start
 string search_menu_title
+string selected
 string status_bar_notification_info_overflow
+string tab
+string template_percent
 string textview
 string title
 style AlertDialog_AppCompat
@@ -3666,6 +3694,7 @@ style Base_Widget_MaterialComponents_TextView
 style CardView
 style CardView_Dark
 style CardView_Light
+style DialogWindowTheme
 style EmptyTheme
 style MaterialAlertDialog_Material3
 style MaterialAlertDialog_Material3_Body_Text

@@ -1,5 +1,6 @@
 package com.bugrakaragozoglu.pickin.service
 
+import com.bugrakaragozoglu.pickin.model.Movie
 import okhttp3.OkHttpClient
 import okhttp3.Protocol
 import retrofit2.Retrofit

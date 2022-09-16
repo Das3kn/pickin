@@ -15,7 +15,7 @@ class ResponseModel (
         @SerializedName("poster_path")
         val poster_path : String
         )*/
-        val movieTitle: String,
+        val movieTitle: String ,
         val movieOverview : String,
         val moviePosterPath : Int,
         val movieBackdroppath : Int,
